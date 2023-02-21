@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {PropTypes} from 'prop-types'
+import PropTypes from 'prop-types'
 
 export const Login = () => {
 
@@ -29,5 +29,5 @@ Login.defaultProps = {
 }
 
 Login.propTypes = {
-  inputLogin: propTypes.string.isRequired
+  inputLogin: PropTypes.string.isRequired
 }
