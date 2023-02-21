@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='container'>
       <HeaderContainer />
-      <Login />
+      <Login/>
       <CategoriesAjax onDisplayItem={handleDisplay} />
     </div>
   )
