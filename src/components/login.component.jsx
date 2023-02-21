@@ -1,6 +1,5 @@
-const Login = () => {
+export const Login = () => {
   
-
   return (<>
   
     <h1>Bienvenue sur notre App</h1>
