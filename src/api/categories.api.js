@@ -4,12 +4,20 @@ import axios from 'axios'
 
 export const Categoriesfetcher = (id) => {
 
-  return axios.get('http://localhost:8080/api/subject/category', {
+  console.log('request');
+  
 
-  }).then(({dataCategories}) => ({
-    id: dataCategories.id,
-    name: dataCategories.name,
-    count: dataCategories.count,
-    lastUpdate: dataCategories.lastUpdate
-  }))
+  return axios.get('http://localhost:8080/api/subject/category').then(({ data }) => {
+    console.log(data);
+
+    return data;
+    
+  })
+    // .then(({data}) => ({
+    //   id: data.id,
+    //   name: data.name,
+    //   count: data.count,
+    //   lastUpdate: data.lastUpdate
+    // }))
+  
 }
