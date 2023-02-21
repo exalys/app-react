@@ -1,15 +1,14 @@
 import {useState} from 'react'
 import PropTypes from 'prop-types'
 
-export const Login = (onLogin) => {
+export const Login = () => {
 
   const [identifiant, setIdentifiant] = useState('')
   
-  // const onLogin = (e) => {
-  //   e.preventDefault()
-  //   console.log('Tentative de login, identifiant = ', identifiant)
-  //   handleLogin(identifiant)
-  // }
+  const onLogin = (e) => {
+    e.preventDefault()
+    console.log('Tentative de login, identifiant = ', identifiant)
+  }
   
   return (<>
     <h1>Bienvenue sur notre App</h1>
