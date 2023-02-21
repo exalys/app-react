@@ -14,6 +14,10 @@ const categories = [
     lastUpdate: 1676974378 }
 ]
 
+const handleLogin = (identifiant) => {
+  console.log(identifiant)
+}
+
 const handleDisplay = (id) => {
   console.log(id)
 }
@@ -22,7 +26,8 @@ function App() {
   return (
     <div className='container'>
       <HeaderContainer />
-      <Login />
+      <Login onLogin={handleLogin}/>
+      {/* <h2>Salut {identifiant}</h2> */}
       <CategoriesList categories={categories} onDisplayItem={handleDisplay}/>
     </div>
   )

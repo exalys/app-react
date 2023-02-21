@@ -1,19 +1,20 @@
 import {useState} from 'react'
 import PropTypes from 'prop-types'
 
-export const Login = () => {
+export const Login = (onLogin) => {
 
   const [identifiant, setIdentifiant] = useState('')
   
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Tentative de login, identifiant = ', identifiant)
-  }
+  // const onLogin = (e) => {
+  //   e.preventDefault()
+  //   console.log('Tentative de login, identifiant = ', identifiant)
+  //   handleLogin(identifiant)
+  // }
   
   return (<>
     <h1>Bienvenue sur notre App</h1>
     <p>Tout d'abord, identifiez-vous :</p>
-    <form className="row" onSubmit={handleSubmit}>
+    <form className="row" onSubmit={() => onLogin(identifiant)}>
       <div className="col-md-6">
         <input type="text" className="form-control" name="inputLogin" id="inputLogin" placeholder="Entrer votre identifiant" onChange={(e) => setIdentifiant(e.target.value)} value={identifiant} />
       </div>
@@ -25,9 +26,11 @@ export const Login = () => {
 
 }
 Login.defaultProps = {
-  inputLogin: null
+  inputLogin: "",
+  onLogin: () => {}
 }
 
 Login.propTypes = {
-  inputLogin: PropTypes.string.isRequired
+  inputLogin: PropTypes.string.isRequired,
+  onLogin: PropTypes.func
 }
