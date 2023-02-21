@@ -1,35 +1,39 @@
 import {useState} from 'react'
 import PropTypes from 'prop-types'
 
-export const Login = () => {
+export const Login = ({onLoginSubmit}) => {
 
-  const [identifiant, setIdentifiant] = useState('')
+  const [pseudo, setPseudo] = useState('')
   
-  const onLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Tentative de login, identifiant = ', identifiant)
+    console.log(`[login.component.jsx] Connexion avec le pseudo ${pseudo}`)
+    onLoginSubmit(pseudo)
+    setPseudo("")
   }
   
   return (<>
-    <h1>Bienvenue sur notre App</h1>
-    <p>Tout d'abord, identifiez-vous :</p>
-    <form className="row" onSubmit={() => onLogin()}>
-      <div className="col-md-6">
-        <input type="text" className="form-control" name="inputLogin" id="inputLogin" placeholder="Entrer votre identifiant" onChange={(e) => setIdentifiant(e.target.value)} value={identifiant} />
-      </div>
-      <div className="col-md-2">
-      <button type="submit" className="btn btn-primary">Connexion</button>
-      </div>
-    </form>
-    </>)
+    <div className='text-center'>
+      <h1>Bienvenue sur notre App</h1>
+      <p>Tout d'abord, identifiez-vous :</p>
+      <form className="row" onSubmit={handleSubmit}>
+        <div className="offset-md-4 col-md-3">
+          <input type="text" className="form-control" name="pseudo" id="pseudo" placeholder="Entrer votre pseudo" onChange={(e) => setPseudo(e.target.value)} value={pseudo} />
+        </div>
+        <div className="col-md-1">
+          <button type="submit" className="btn btn-primary">Connexion</button>
+        </div>
+      </form>
+    </div>
+  </>)
 
 }
 Login.defaultProps = {
-  inputLogin: "",
-  onLogin: () => {}
+  pseudo: "",
+  onLoginSubmit: () => {}
 }
 
 Login.propTypes = {
-  inputLogin: PropTypes.string.isRequired,
-  onLogin: PropTypes.func
+  pseudo: PropTypes.string.isRequired,
+  onLoginSubmit: PropTypes.func
 }
