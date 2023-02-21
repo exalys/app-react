@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 
 
-const CategorieListItem = ({id, name, count, mastMessage}) => {
+const CategorieListItem = ({id, name, count, lastMessage}) => {
 
   return (
     <div className="border border-primary">
@@ -21,7 +21,7 @@ const CategoriesList = ({categories}) => {
 
   return (
     <>
-      <h2>Liste des Catgories</h2>
+      <h2>Liste des Catégories</h2>
       <div>
         {categoriesJSX}
       </div>

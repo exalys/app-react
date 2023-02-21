@@ -7,11 +7,11 @@ const categories = [
   {id:1 , 
   name:'nom',
   count: 4,
-  lastMessage: 1676974378 },
+  lastUpdate: 1676974378 },
   {id:2 , 
     name:'nom',
-    count: 4,
-    lastMessage: 1676974378 }
+    count: 9,
+    lastUpdate: 1676974378 }
 ]
 
 function App() {
