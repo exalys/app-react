@@ -2,6 +2,9 @@ import './App.css'
 import HeaderContainer from './containers/header/header.container'
 import {Login} from './components/login.component'
 import CategoriesList from './components/categories/categories.component'
+import CategoriesAjax from './components/categories/categories.ajax'
+
+// import CategoriesAjax from './components/categories/categories.ajax'
 
 const categories = [
   {id:1 , 
@@ -29,6 +32,7 @@ function App() {
       <Login onLogin={handleLogin}/>
       {/* <h2>Salut {identifiant}</h2> */}
       <CategoriesList categories={categories} onDisplayItem={handleDisplay}/>
+
     </div>
   )
 }

@@ -6,14 +6,18 @@ const CategorieListItem = ({id, name, count, lastUpdate, onDisplayCategorie}) =>
     const timeUpdate = ''
     console.log(dateUpdate)
 
+
   return (
   <div onClick={() => onDisplayCategorie(id)} className="container border border-secondary  mb-3">   
     <div className="row p-2">
       <div className="col-md-6 h3">{name}</div>
-      <div className="col-md-6">{count>1
+      <div className="col-md-3">{count>1
         ? `nb de messages` 
         : `nb de message`} : 
         <span className="h4"> {count}</span> 
+      </div>
+      <div className="col-md-3">
+      <button onClick={() => onDisplayCategorie(id)}>Afficher les messages</button>
       </div>
     </div>    
 
