@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import HeaderContainer from './containers/header/header.container'
+import Login from './components/login.component'
 
 function App() {
   return (
-    <div className="App">
-      Application d'Alex et Fred de la terre
+    <div className='container'>
+      {/* <HeaderContainer /> */}
+      <Login />
     </div>
   );
 }
