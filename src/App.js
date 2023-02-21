@@ -5,21 +5,25 @@ import CategoriesList from './components/categories/categories.component'
 
 const categories = [
   {id:1 , 
-  name:'nom',
+  name:'cat1',
   count: 4,
   lastUpdate: 1676974378 },
   {id:2 , 
     name:'nom',
-    count: 9,
+    count: 1,
     lastUpdate: 1676974378 }
 ]
+
+const handleDisplay = (id) => {
+  console.log(id)
+}
 
 function App() {
   return (
     <div className='container'>
       <HeaderContainer />
       <Login />
-      <CategoriesList categories={categories}/>
+      <CategoriesList categories={categories} onDisplayItem={handleDisplay}/>
     </div>
   )
 }
