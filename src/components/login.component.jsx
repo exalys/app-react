@@ -14,11 +14,10 @@ export const Login = ({onLoginSubmit}) => {
   
   return (<>
     <div className='text-center'>
-      <h1>Bienvenue sur notre App</h1>
-      <p>Tout d'abord, identifiez-vous :</p>
-      <form className="row" onSubmit={handleSubmit}>
+      <h1 className="my-4">Bienvenue sur notre App</h1>
+      <form className="row my-4" onSubmit={handleSubmit}>
         <div className="offset-md-4 col-md-3">
-          <input type="text" className="form-control" name="pseudo" id="pseudo" placeholder="Entrer votre pseudo" onChange={(e) => setPseudo(e.target.value)} value={pseudo} />
+          <input type="text" className="form-control" name="pseudo" id="pseudo" placeholder="Entrez ici votre pseudo" onChange={(e) => setPseudo(e.target.value)} value={pseudo} />
         </div>
         <div className="col-md-1">
           <button type="submit" className="btn btn-primary">Connexion</button>
