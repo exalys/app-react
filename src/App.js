@@ -19,7 +19,7 @@ function App() {
   }
 
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       <HeaderContainer />
       <Login onLoginSubmit={handleLoginSubmit} />
       {utilisateur && 
