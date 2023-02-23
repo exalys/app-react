@@ -23,9 +23,11 @@ function App() {
       <HeaderContainer />
       <Login onLoginSubmit={handleLoginSubmit} />
       {utilisateur && 
-      <h3 className='text-center text-primary'>Hello {utilisateur}</h3>
+      <>
+        <h3 className='text-center text-primary'>Hello {utilisateur}</h3>
+        <CategoriesAjax onDisplayItem={handleDisplay} />
+      </>
       }
-      <CategoriesAjax onDisplayItem={handleDisplay} />
     </div>
   )
 
