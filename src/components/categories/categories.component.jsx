@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const CategorieListItem = ({id, name, count, lastUpdate, onDisplayCategorie}) => {
+const CategorieListItem = ({id, name, count, icon, lastUpdate, onDisplayCategorie}) => {
 
     const dateUpdate = new Date(lastUpdate*1000).toLocaleDateString('fr-be')
     const timeUpdate = new Date(lastUpdate*1000).toLocaleTimeString('fr-be', { hour: '2-digit', minute: '2-digit' })
@@ -9,6 +9,8 @@ const CategorieListItem = ({id, name, count, lastUpdate, onDisplayCategorie}) =>
 
   return (
   <div onClick={() => onDisplayCategorie(id)} className="container border border-secondary  mb-3">   
+    
+    <img src={`http://localhost:8080/${icon}`} alt={name} className="img-fluid" />
     <div className="row p-2">
       <div className="col-md-6 h3">{name}</div>
       <div className="col-md-3">{count>1
