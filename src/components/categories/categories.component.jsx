@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 const CategorieListItem = ({id, name, count, lastUpdate, onDisplayCategorie}) => {
 
     const dateUpdate = new Date(lastUpdate*1000).toLocaleDateString('fr-be')
-    const timeUpdate = ''
-    console.log(dateUpdate)
+    const timeUpdate = new Date(lastUpdate*1000).toLocaleTimeString('fr-be', { hour: '2-digit', minute: '2-digit' })
+    console.log(timeUpdate)
 
 
   return (
@@ -21,7 +21,7 @@ const CategorieListItem = ({id, name, count, lastUpdate, onDisplayCategorie}) =>
       </div>
     </div>    
 
-    <div className="mb-2 blockquote-footer"><em> Dernier message:</em> {dateUpdate}</div>
+    <div className="mb-2 blockquote-footer"><em> Dernier message:</em> le {dateUpdate} à {timeUpdate}</div>
   </div>      
   )
 }
