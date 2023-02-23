@@ -7,8 +7,11 @@ import {useState} from 'react'
 
 function App() {
 
+  const [utilisateur, setUtilisateur] = useState('')
+
   const handleLoginSubmit = (pseudo) => {
     console.log(`[App.js] Pseudo de l'utilisateur : ${pseudo}`)
+    setUtilisateur(pseudo)
   }
 
   const handleDisplay = (id) => {
@@ -19,6 +22,7 @@ function App() {
     <div className='container'>
       <HeaderContainer />
       <Login onLoginSubmit={handleLoginSubmit} />
+      <h3 className='text-center text-primary'>Hello {utilisateur}</h3>
       <CategoriesAjax onDisplayItem={handleDisplay} />
     </div>
   )
