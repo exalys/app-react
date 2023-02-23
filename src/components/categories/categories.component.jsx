@@ -10,9 +10,10 @@ const CategorieListItem = ({id, name, count, icon, lastUpdate, onDisplayCategori
   return (
   <div onClick={() => onDisplayCategorie(id)} className="container border border-secondary  mb-3">   
     
-    <img src={`http://localhost:8080/${icon}`} alt={name} className="img-fluid" />
+    
     <div className="row p-2">
-      <div className="col-md-6 h3">{name}</div>
+      <div className="col-md-3"><img src={`http://localhost:8080/${icon}`} width="30" height="30"  alt={name}/></div>
+      <div className="col-md-3 h3">{name}</div>
       <div className="col-md-3">{count>1
         ? `nb de messages` 
         : `nb de message`} : 
